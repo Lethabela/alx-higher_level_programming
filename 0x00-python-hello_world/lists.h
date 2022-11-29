@@ -20,7 +20,7 @@ fndef LISTS_H
  *
  *      * Description: singly linked list node structure
  *
- *       * 
+ *       * for Holberton project
  *
  *        */
 
@@ -28,9 +28,9 @@ typedef struct listint_s
 
 {
 
-	    int n;
+		int n;
 
-	        struct listint_s *next;
+			struct listint_s *next;
 
 } listint_t;
 
@@ -47,3 +47,4 @@ int check_cycle(listint_t *list);
 
 
 #endif /* LISTS_H */
+

@@ -1,31 +1,23 @@
 #include "lists.h"
+#include <string.h>
 /**
- * chech_cycle -linked list contains a cycle.
- * @list: the pointer to the struct
- *
- * Return: If there is no cycle - 0.
- * If there is a cycle - 1.
+ * check_cycle - entrypoint
+ * @list: pointer to list list_t
+ * Return: linked list or cycle
  */
 int check_cycle(listint_t *list)
 {
-	listint_t *slow = list;
-	listint_t *fast = list;
+	listint_t *slow, *fast;
 
-	if (list == NULL)
+	slow = list;
+	fast = list;
+
+	while (slow && fast && fast->next)
 	{
-		return (0);
-	}
-
-	fast = fast->next;
-
-	while (slow != NULL && fast != NULL && fast->next != NULL)
-	{
-		if (fast == slow)
-		{
-			return (1);
-		}
 		slow = slow->next;
 		fast = fast->next->next;
+		if (slow == fast)
+			return (1);
 	}
 	return (0);
 }
